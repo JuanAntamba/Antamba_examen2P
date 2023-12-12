@@ -25,3 +25,16 @@ void imprimirDetalle(int ingresos[MAX_INSUMOS][meses], int egresos[MAX_INSUMOS][
         printf("\n");
     }
 }
+
+// Función para obtener y mostrar el total de ingresos y egresos por insumo en el año
+void obtenerTotalesAnuales(int ingresos[MAX_INSUMOS][meses], int egresos[MAX_INSUMOS][meses]) {
+    for (int i = 0; i < MAX_INSUMOS; i++) {
+        int totalIngresos = 0;
+        int totalEgresos = 0;
+        for (int j = 0; j < meses; j++) {
+            totalIngresos += ingresos[i][j];
+            totalEgresos += egresos[i][j];
+        }
+        printf("Insumo %d - Total Ingresos: %d, Total Egresos: %d\n", i + 1, totalIngresos, totalEgresos);
+    }
+}
