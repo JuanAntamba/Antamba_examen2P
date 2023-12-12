@@ -38,3 +38,40 @@ void obtenerTotalesAnuales(int ingresos[MAX_INSUMOS][meses], int egresos[MAX_INS
         printf("Insumo %d - Total Ingresos: %d, Total Egresos: %d\n", i + 1, totalIngresos, totalEgresos);
     }
 }
+
+int main() {
+    srand(time(NULL));
+
+ 
+    int ingresos[MAX_INSUMOS][meses];
+    int egresos[MAX_INSUMOS][meses];
+
+    generarDatosAleatorios(ingresos, egresos);
+
+    // Menú de opciones 
+    int opcion;
+    do {
+        printf("Seleccione una opcion:\n");
+        printf("1. Imprimir detalle de ingresos y egresos\n");
+        printf("2. Obtener total de ingresos y egresos anuales\n");
+        printf("0. Salir\n");
+
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                imprimirDetalle(ingresos, egresos);
+                break;
+            case 2:
+                obtenerTotalesAnuales(ingresos, egresos);
+                break;
+            case 0:
+                printf("Saliendo.........\n");
+                break;
+            default:
+                printf("Opcion no valida..\n");
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
