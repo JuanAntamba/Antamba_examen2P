@@ -14,3 +14,14 @@ void generarDatosAleatorios(int ingresos[MAX_INSUMOS][meses], int egresos[MAX_IN
         }
     }
 }
+
+// Función de ingresos y egresos por insumo mensulaes
+void imprimirDetalle(int ingresos[MAX_INSUMOS][meses], int egresos[MAX_INSUMOS][meses]) {
+    for (int i = 0; i < MAX_INSUMOS; i++) {
+        printf("Insumo %d:\n", i + 1);
+        for (int j = 0; j < meses; j++) {
+            printf("  Mes %d - Ingresos: %d, Egresos: %d\n", j + 1, ingresos[i][j], egresos[i][j]);
+        }
+        printf("\n");
+    }
+}
